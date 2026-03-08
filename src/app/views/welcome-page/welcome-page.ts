@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
 import {
-  MatCard,
   MatCardActions,
   MatCardContent,
   MatCardHeader,
+  MatCardModule,
   MatCardSubtitle,
   MatCardTitle
 } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+
 
 @Component({
   selector: 'app-welcome-page',
   imports: [
-    MatCard,
+    MatCardModule,
+    MatButtonModule,
     MatCardHeader,
     MatCardTitle,
     MatCardSubtitle,
