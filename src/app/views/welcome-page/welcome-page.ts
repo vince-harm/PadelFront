@@ -8,7 +8,6 @@ import {
   MatCardTitle
 } from '@angular/material/card';
 
-
 @Component({
   selector: 'app-welcome-page',
   imports: [
