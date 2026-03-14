@@ -32,4 +32,7 @@ export class PadelService {
       description: 'À la frontière du Luxembourg, ce site offre un cadre verdoyant et apaisant. Des installations modernes parfaites pour s\'évader du quotidien.'
     }
   ];
+  getSites(): PadelSite[] {
+    return this.sites;
+  }
 }
