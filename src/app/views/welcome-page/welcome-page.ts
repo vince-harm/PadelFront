@@ -1,7 +1,7 @@
-import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { Component, inject} from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { PadelService } from '../../services/padel.service'; // Ajuste le chemin selon ta structure
+import { PadelService } from '../../services/padel.service';
 
 @Component({
   selector: 'app-welcome-page',
@@ -13,7 +13,6 @@ import { PadelService } from '../../services/padel.service'; // Ajuste le chemin
   templateUrl: './welcome-page.html',
   styleUrl: './welcome-page.css',
 
-  //encapsulation: ViewEncapsulation.None
 })
 export class WelcomePage {
 
