@@ -39,8 +39,8 @@ export class PadelService {
       initial: 'A',
       description: 'À la frontière du Luxembourg, ce site offre un cadre verdoyant et apaisant. Des installations modernes parfaites pour s\'évader du quotidien.',
       courts:[
-        {id : uuid(), name: 'Courts1', type: 'Indoor'},
-        {id : uuid(), name: 'Courts2', type: 'Outdoor'}
+        {id : uuid(), name: 'Court1', type: 'Indoor'},
+        {id : uuid(), name: 'Court2', type: 'Outdoor'}
       ]
     }
   ];
