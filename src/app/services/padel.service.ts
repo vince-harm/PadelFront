@@ -15,8 +15,8 @@ export class PadelService {
       initial: 'B',
       description: 'Situé au cœur de la capitale, ce centre propose des terrains indoor de dernière génération. Idéal pour une partie entre collègues ou un tournoi intensif.',
       courts:[
-        {id : uuid(), name: 'Courts1', type: 'Indoor'},
-        {id : uuid(), name: 'Courts2', type: 'Outdoor'}
+        {id : uuid(), name: 'Court1', type: 'Indoor'},
+        {id : uuid(), name: 'Court2', type: 'Outdoor'}
       ]
     },
     {
@@ -27,8 +27,8 @@ export class PadelService {
       initial: 'L',
       description: 'La "Cité Ardente" porte bien son nom ! Profitez de terrains spacieux et d\'un club-house réputé pour sa convivialité et son ambiance unique.',
       courts:[
-        {id : uuid(), name: 'Courts1', type: 'Outdoor'},
-        {id : uuid(), name: 'Courts2', type: 'Indoor'}
+        {id : uuid(), name: 'Court1', type: 'Outdoor'},
+        {id : uuid(), name: 'Court2', type: 'Indoor'}
       ]
     },
     {
