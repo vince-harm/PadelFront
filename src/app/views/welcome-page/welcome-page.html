@@ -41,6 +41,7 @@
 
         <mat-card-actions class="p-8 pt-0">
           <button mat-flat-button
+                  [routerLink]="['/reserver', site.id]"
                   class="w-full !py-8 !rounded-2xl font-black text-base uppercase tracking-widest !bg-slate-900 !text-white hover:!bg-slate-800 transition-all">
             Réserver à {{ site.city }}
           </button>

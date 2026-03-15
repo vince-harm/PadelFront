@@ -1,0 +1,18 @@
+@if (site(); as currentSite) {
+  <div class="p-10">
+    <h1 class="text-4xl font-black mb-10">{{ currentSite.clubName }}</h1>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      @for (court of currentSite.courts; track court.id) {
+        <div (click)="selectCourt(court)"
+             [class.border-slate-900]="selectedCourt()?.id === court.id"
+             class="border-2 p-6 rounded-3xl cursor-pointer hover:bg-slate-50 transition-all">
+          <h3 class="font-bold text-xl">{{ court.name }}</h3>
+          <p class="text-slate-500">{{ court.type }}</p>
+        </div>
+      }
+    </div>
+  </div>
+} @else {
+  <p>Site non trouvé...</p>
+}

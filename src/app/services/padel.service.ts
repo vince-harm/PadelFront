@@ -47,4 +47,7 @@ export class PadelService {
   getSites(): PadelSite[] {
     return this.sites;
   }
+  getSiteById(id: string): PadelSite | undefined {
+    return this.sites.find(site => site.id === id);
+  }
 }
