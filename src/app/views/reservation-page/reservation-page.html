@@ -1,28 +1,25 @@
 @if (site(); as currentSite) {
-  <div class="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
+  <div class="page-container">
 
-    <div class="text-center mb-16">
-      <h1 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter">
-        {{ currentSite.clubName }}
-      </h1>
-      <p class="text-slate-500 mt-4 text-sm md:text-base">
+    <header class="page-header">
+      <h1 class="page-title">{{ currentSite.clubName }}</h1>
+      <p class="text-slate-500 mt-4">
         {{ currentSite.city }} — Choisissez votre terrain pour accéder au calendrier.
       </p>
       <div class="w-16 h-1 bg-slate-900 mx-auto mt-4 rounded-full"></div>
-    </div>
+    </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto items-stretch">
+    <div class="court-grid">
       @for (court of currentSite.courts; track court.id) {
         <mat-card (click)="selectCourt(court)"
                   [class.padel-card-selected]="selectedCourt()?.id === court.id"
                   class="padel-card group">
 
           <mat-card-header class="p-8">
-            <div mat-card-avatar
-                 class="!bg-slate-800 !text-white rounded-2xl flex items-center justify-center font-black shadow-sm">
+            <div mat-card-avatar class="padel-avatar">
               {{ currentSite.initial }}
             </div>
-            <mat-card-title class="font-black text-2xl tracking-tight text-slate-800 uppercase">
+            <mat-card-title class="font-black text-2xl uppercase tracking-tight text-slate-800">
               {{ court.name }}
             </mat-card-title>
             <mat-card-subtitle class="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em] mt-1">
@@ -52,6 +49,8 @@
   </div>
 } @else {
   <div class="min-h-screen flex items-center justify-center bg-slate-50">
-    <p class="font-black uppercase tracking-widest text-slate-300">Chargement du centre...</p>
+    <p class="font-black uppercase tracking-widest text-slate-300 animate-pulse">
+      Chargement du centre...
+    </p>
   </div>
 }

@@ -1,24 +1,22 @@
-<div class="min-h-screen bg-slate-50 p-6 md:p-12 font-sans">
+<div class="page-container">
 
-  <div class="text-center mb-16">
-    <h1 class="text-4xl md:text-5xl font-black text-slate-900 uppercase tracking-tighter">
-      Réserver un terrain
-    </h1>
-    <p class="text-slate-500 mt-4 text-sm md:text-base">
+  <header class="page-header">
+    <h1 class="page-title">Réserver un terrain</h1>
+    <p class="page-subtitle">
       Sélectionnez votre centre pour accéder aux différents terrains ainsi qu’à leurs disponibilités.
     </p>
-    <div class="w-16 h-1 bg-slate-900 mx-auto mt-4 rounded-full"></div>
-  </div>
+    <div class="title-separator"></div>
+  </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto items-stretch">
+  <div class="court-grid">
     @for (site of sites; track site.id) {
-      <mat-card class="!rounded-[2.5rem] shadow-xl hover:shadow-2xl transition-all duration-500 border-none overflow-hidden group bg-white flex flex-col min-h-[500px]">
+      <mat-card class="padel-card group">
 
         <mat-card-header class="p-8">
-          <div mat-card-avatar class="!bg-slate-800 !text-white rounded-2xl flex items-center justify-center font-black shadow-sm">
+          <div mat-card-avatar class="padel-avatar">
             {{ site.initial }}
           </div>
-          <mat-card-title class="font-black text-2xl tracking-tight text-slate-800">
+          <mat-card-title class="font-black text-2xl tracking-tight text-slate-800 uppercase">
             {{ site.city }}
           </mat-card-title>
           <mat-card-subtitle class="text-slate-400 font-bold uppercase text-[10px] tracking-[0.2em] mt-1">
@@ -26,7 +24,7 @@
           </mat-card-subtitle>
         </mat-card-header>
 
-        <div class="h-64 w-full overflow-hidden bg-slate-200 relative">
+        <div class="card-image-container">
           <img mat-card-image
                [src]="site.image"
                [alt]="site.city"
@@ -34,7 +32,7 @@
         </div>
 
         <mat-card-content class="p-8 flex-grow">
-          <p class="text-slate-500 leading-relaxed text-sm">
+          <p class="card-description">
             {{ site.description }}
           </p>
         </mat-card-content>
@@ -42,7 +40,7 @@
         <mat-card-actions class="p-8 pt-0">
           <button mat-flat-button
                   [routerLink]="['/reserver', site.id]"
-                  class="w-full !py-8 !rounded-2xl font-black text-base uppercase tracking-widest !bg-slate-900 !text-white hover:!bg-slate-800 transition-all">
+                  class="btn-primary-padel">
             Réserver à {{ site.city }}
           </button>
         </mat-card-actions>

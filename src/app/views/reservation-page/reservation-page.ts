@@ -15,8 +15,7 @@ import {DatePipe} from '@angular/common';
     MatCardModule,
     MatButtonModule,
     MatDatepickerModule,
-    MatNativeDateModule,
-    DatePipe
+    MatNativeDateModule
   ],
   templateUrl: './reservation-page.html'
 })
