@@ -1,11 +1,13 @@
-import { Injectable } from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import { PadelSite } from '../shared/site.model';
 import { uuid } from '../shared/uuid';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PadelService {
+  httpClient: HttpClient = inject(HttpClient);
   private readonly sites: PadelSite[] = [
     {
       id: uuid(),
