@@ -33,6 +33,7 @@ export class ReservationPage implements OnInit {
   // Signal pour stocker la date sélectionnée (par défaut aujourd'hui)
   selectedDate = signal<Date | null>(new Date());
 
+
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
     if (id) {

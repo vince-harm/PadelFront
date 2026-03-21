@@ -25,9 +25,12 @@
         </app-padel-card>
       }
     </div>
-    @if (selectedCourt()) {
+    @if (selectedCourt() ; as court) {
       <div class="animate-in fade-in slide-in-from-bottom-4 duration-500">
-        <app-date-selector (dateChange)="onDateSelected($event)"></app-date-selector>
+        <app-date-selector
+          [courtName]="court.name"
+          (dateChange)="onDateSelected($event)">
+        </app-date-selector>
       </div>
     }
 
