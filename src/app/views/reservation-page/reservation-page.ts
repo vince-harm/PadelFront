@@ -8,6 +8,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {DatePipe} from '@angular/common';
 import {PadelCardComponent} from '../padel-card/padel-card';
+import {DateSelectorComponent} from '../date-selector/date-selector';
 
 @Component({
   selector: 'app-reservation-page',
@@ -17,7 +18,8 @@ import {PadelCardComponent} from '../padel-card/padel-card';
     MatButtonModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    PadelCardComponent
+    PadelCardComponent,
+    DateSelectorComponent
   ],
   templateUrl: './reservation-page.html'
 })
@@ -36,6 +38,10 @@ export class ReservationPage implements OnInit {
     if (id) {
       this.site.set(this.padelService.getSiteById(id));
     }
+  }
+  onDateSelected(date: Date) {
+    console.log('Nouvelle date sélectionnée :', date);
+    this.selectedDate.set(date);
   }
 
   selectCourt(court: PadelCourt) {
